@@ -42,11 +42,12 @@ class App extends Component {
   };
 
   render() {
+    const { heading, results } = this.state;
     return (
       <div className="App">
-        <Header heading={this.state.heading} />
+        <Header heading={heading} />
         <Form onChange={this.handleChange} onSubmit={this.handleSubmit} />
-        <Gifs results={this.state.results} />
+        <Gifs results={results} />
       </div>
     );
   }

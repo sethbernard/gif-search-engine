@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-export class Gif extends Component {
+class Gif extends Component {
   render() {
+    const { gif, alt } = this.props;
     return (
       <div className="gif">
-        <img src={this.props.gif} alt={this.props.alt} />
+        <img src={gif} alt={alt} />
       </div>
     );
   }

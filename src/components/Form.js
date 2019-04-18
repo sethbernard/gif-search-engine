@@ -4,14 +4,15 @@ import TextField from '@material-ui/core/TextField';
 
 class Form extends Component {
   render() {
+    const { onSubmit, onChange, value } = this.props;
     return (
-      <form onSubmit={e => this.props.onSubmit(e)}>
+      <form onSubmit={e => onSubmit(e)}>
         <TextField
           className="input"
           label="Find GIFS"
           placeholder="Ex: dog"
-          onChange={e => this.props.onChange(e)}
-          value={this.props.value}
+          onChange={e => onChange(e)}
+          value={value}
           name="text"
           margin="normal"
         />
@@ -20,8 +21,8 @@ class Form extends Component {
           className="input"
           label="# of GIFs to display"
           placeholder="Ex: 20"
-          value={this.props.value}
-          onChange={e => this.props.onChange(e)}
+          value={value}
+          onChange={e => onChange(e)}
           name="limit"
           margin="normal"
         />
@@ -30,7 +31,7 @@ class Form extends Component {
           className="btn"
           variant="contained"
           color="primary"
-          onClick={e => this.props.onSubmit(e)}
+          onClick={e => onSubmit(e)}
           type="submit"
         >
           Click me
