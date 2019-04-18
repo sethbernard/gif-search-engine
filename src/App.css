@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #e0e0e0;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  margin: 40px;
+}
+
+form input {
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+}
+
+form button {
+  margin-left: 10px;
+}
+
+.gifs-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gif img {
+  margin: 15px;
+  border-radius: 15px;
+  border: 3px solid black;
+}
