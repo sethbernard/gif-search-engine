@@ -12,7 +12,7 @@ class App extends Component {
       text: '',
       results: [],
       heading: 'GIF Search Engine',
-      limit: 5
+      limit: 20
     };
   }
 
@@ -37,11 +37,11 @@ class App extends Component {
           results: gifs,
           heading: this.state.text.toUpperCase()
         });
-      });
+      })
+      .catch(error => alert(error));
   };
 
   render() {
-    console.log(this.state.results);
     return (
       <div className="App">
         <Header heading={this.state.heading} />
