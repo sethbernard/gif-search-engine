@@ -16,17 +16,19 @@ body {
 }
 
 form {
-  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
-form input {
+.input {
   width: 500px;
   height: 30px;
   font-size: 20px;
 }
 
-form button {
-  margin-left: 10px;
+form .btn {
+  margin-top: 10px;
 }
 
 .gifs-container {
