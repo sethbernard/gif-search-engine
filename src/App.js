@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Form from './components/Form';
 import Gifs from './components/Gifs';
@@ -45,6 +46,7 @@ class App extends Component {
     const { heading, results } = this.state;
     return (
       <div className="App">
+        <NavBar />
         <Header heading={heading} />
         <Form onChange={this.handleChange} onSubmit={this.handleSubmit} />
         <Gifs results={results} />
