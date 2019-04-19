@@ -1,56 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
-import Header from './components/Header';
-import Form from './components/Form';
-import Gifs from './components/Gifs';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import Trending from './components/Trending';
+import Random from './components/Random';
+import Home from './components/Home';
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      text: '',
-      results: [],
-      heading: 'GIF Search Engine',
-      limit: 20
-    };
-  }
-
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    const apiKey = `${process.env.REACT_APP_API_KEY}`;
-    const url = `http://api.giphy.com/v1/gifs/search?q=${
-      this.state.text
-    }&api_key=${apiKey}&limit=${this.state.limit}`;
-
-    fetch(url)
-      .then(response => response.json())
-      .then(info => {
-        let gifs = info.data;
-        this.setState({
-          results: gifs,
-          heading: this.state.text.toUpperCase()
-        });
-      })
-      .catch(error => alert(error));
-  };
-
   render() {
-    const { heading, results } = this.state;
     return (
-      <div className="App">
+      <BrowserRouter>
         <NavBar />
-        <Header heading={heading} />
-        <Form onChange={this.handleChange} onSubmit={this.handleSubmit} />
-        <Gifs results={results} />
-      </div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/trending" component={Trending} />
+          <Route path="/random" component={Random} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
