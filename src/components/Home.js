@@ -12,7 +12,7 @@ class Home extends Component {
     this.state = {
       text: '',
       results: [],
-      heading: 'GIF Search Engine',
+      heading: 'GIF SEARCH ENGINE',
       limit: 20
     };
   }
@@ -23,7 +23,7 @@ class Home extends Component {
     });
   };
 
-  handleSubmit = e => {
+  handleSearch = e => {
     e.preventDefault();
     const apiKey = `${process.env.REACT_APP_API_KEY}`;
     const url = `http://api.giphy.com/v1/gifs/search?q=${
@@ -48,7 +48,7 @@ class Home extends Component {
       <div className="App">
         <NavBar />
         <Header heading={heading} />
-        <Form onChange={this.handleChange} onSubmit={this.handleSubmit} />
+        <Form onChange={this.handleChange} onSubmit={this.handleSearch} />
         <Gifs results={results} />
       </div>
     );
