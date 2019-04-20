@@ -2,10 +2,22 @@ import React, { Component } from 'react';
 
 class Gif extends Component {
   render() {
-    const { gif, alt } = this.props;
+    const { gif, alt, fullScreen } = this.props;
     return (
       <div className="gif">
-        <img src={gif} alt={alt} />
+        <img
+          src={gif}
+          alt={alt}
+          style={
+            fullScreen
+              ? {
+                  width: '90%',
+                  height: '90%',
+                  border: '1px solid black'
+                }
+              : null
+          }
+        />
       </div>
     );
   }

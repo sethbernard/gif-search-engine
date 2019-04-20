@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Gifs from './Gifs';
 
-export default class Trending extends Component {
+class Trending extends Component {
   constructor() {
     super();
 
     this.state = {
       results: [],
       limit: 20,
-      heading: 'TRENDING'
+      heading: 'TRENDING TODAY'
     };
   }
 
@@ -34,6 +34,7 @@ export default class Trending extends Component {
   };
 
   render() {
+    console.log(this.state.results);
     return (
       <div style={{ marginTop: '100px', textAlign: 'center' }}>
         <h1>
@@ -44,3 +45,5 @@ export default class Trending extends Component {
     );
   }
 }
+
+export default Trending;
