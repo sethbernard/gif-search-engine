@@ -33,13 +33,10 @@ class Random extends Component {
   }
 
   render() {
-    console.log(this.state.results);
+    const { results, fullScreen } = this.state;
     return (
       <div style={{ marginTop: '100px', textAlign: 'center' }}>
-        <Gif
-          gif={this.state.results.image_original_url}
-          fullScreen={this.state.fullScreen}
-        />
+        <Gif gif={results.image_original_url} fullScreen={fullScreen} />
       </div>
     );
   }
