@@ -12,7 +12,7 @@ class Gif extends Component {
             fullScreen
               ? {
                   width: '90%',
-                  height: '90%',
+                  height: '80vh',
                   border: '1px solid black'
                 }
               : null

@@ -37,10 +37,8 @@ class Trending extends Component {
     const { heading, results } = this.state;
     return (
       <div style={{ marginTop: '100px', textAlign: 'center' }}>
-        <h1>
-          <Header heading={heading} />
-          <Gifs results={results} />
-        </h1>
+        <Header heading={heading} />
+        <Gifs results={results} />
       </div>
     );
   }

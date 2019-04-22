@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Gif from './Gif';
+import Header from './Header';
+import Button from '@material-ui/core/Button';
 
 class Random extends Component {
   constructor() {
@@ -7,12 +9,12 @@ class Random extends Component {
 
     this.state = {
       results: '',
-      heading: 'RANDOM',
+      heading: 'RANDOM 🤔',
       fullScreen: true
     };
   }
 
-  handleRandom = () => {
+  handleSearch = () => {
     const url = `http://api.giphy.com/v1/gifs/random?api_key=${
       process.env.REACT_APP_API_KEY
     }`;
@@ -29,14 +31,22 @@ class Random extends Component {
   };
 
   componentDidMount() {
-    this.handleRandom();
+    this.handleSearch();
   }
 
   render() {
-    const { results, fullScreen } = this.state;
+    const { results, fullScreen, heading } = this.state;
     return (
       <div style={{ marginTop: '100px', textAlign: 'center' }}>
         <Gif gif={results.image_original_url} fullScreen={fullScreen} />
+        <Button
+          className="btn"
+          variant="contained"
+          color="primary"
+          onClick={this.handleSearch}
+        >
+          Try Again 🎰
+        </Button>
       </div>
     );
   }

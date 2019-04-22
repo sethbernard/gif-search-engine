@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../App.css';
-import NavBar from './NavBar';
 import Header from './Header';
 import Form from './Form';
 import Gifs from './Gifs';
@@ -23,12 +22,8 @@ class Home extends Component {
     });
   };
 
-  handleSearch = e => {
+  handleSearch = e => url => {
     e.preventDefault();
-    const apiKey = `${process.env.REACT_APP_API_KEY}`;
-    const url = `http://api.giphy.com/v1/gifs/search?q=${
-      this.state.text
-    }&api_key=${apiKey}&limit=${this.state.limit}`;
 
     fetch(url)
       .then(response => response.json())
@@ -39,16 +34,23 @@ class Home extends Component {
           heading: this.state.text.toUpperCase()
         });
       })
-      .catch(error => alert(error));
+      .catch(error => console.error(error));
   };
 
   render() {
-    const { heading, results } = this.state;
+    const { heading, results, text, limit } = this.state;
+    const { REACT_APP_API_KEY } = process.env;
     return (
       <div className="App">
-        <NavBar />
         <Header heading={heading} />
-        <Form onChange={this.handleChange} onSubmit={this.handleSearch} />
+        <Form
+          onChange={this.handleChange}
+          onSubmit={e =>
+            this.handleSearch(e)(
+              `http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${REACT_APP_API_KEY}&limit=${limit}`
+            )
+          }
+        />
         <Gifs results={results} />
       </div>
     );

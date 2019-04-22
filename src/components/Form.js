@@ -6,7 +6,7 @@ class Form extends Component {
   render() {
     const { onSubmit, onChange, value } = this.props;
     return (
-      <form onSubmit={e => onSubmit(e)}>
+      <form onSubmit={e => onSubmit(e)(this.props.value)}>
         <TextField
           className="input"
           label="Find GIFS"
