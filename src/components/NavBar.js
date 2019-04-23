@@ -1,19 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import List from '@material-ui/core/List';
 import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 import { Link } from 'react-router-dom';
 
-const NavBar = () => {
-  return (
-    <AppBar>
-      <List className="nav-bar">
-        <Tab label="Home" component={Link} to="/" />
-        <Tab label="Trending" component={Link} to="/trending" />
-        <Tab label="Random" component={Link} to="/random" />
-      </List>
-    </AppBar>
-  );
-};
+class NavBar extends Component {
+  state = {
+    value: 0
+  };
+
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  render() {
+    return (
+      <AppBar>
+        <List className="nav-bar">
+          <Tabs
+            value={this.state.value}
+            onChange={this.handleChange}
+            TabIndicatorProps={{ style: { backgroundColor: '#F5F5F5' } }}
+          >
+            <Tab label="Home" component={Link} to="/" value={0} />
+            <Tab label="Trending" component={Link} to="/trending" value={1} />
+            <Tab label="Random" component={Link} to="/random" value={2} />
+          </Tabs>
+        </List>
+      </AppBar>
+    );
+  }
+}
 
 export default NavBar;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Gif from './Gif';
-import Header from './Header';
 import Button from '@material-ui/core/Button';
 
 class Random extends Component {
@@ -35,7 +34,7 @@ class Random extends Component {
   }
 
   render() {
-    const { results, fullScreen, heading } = this.state;
+    const { results, fullScreen } = this.state;
     return (
       <div style={{ marginTop: '100px', textAlign: 'center' }}>
         <Gif gif={results.image_original_url} fullScreen={fullScreen} />
@@ -45,7 +44,7 @@ class Random extends Component {
           color="primary"
           onClick={this.handleSearch}
         >
-          Try Again 🎰
+          Try Again
         </Button>
       </div>
     );
