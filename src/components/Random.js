@@ -34,7 +34,9 @@ class Random extends Component {
     const { results, fullScreen } = this.state;
     return (
       <div style={{ marginTop: '100px', textAlign: 'center' }}>
-        <Gif gif={results.image_original_url} fullScreen={fullScreen} />
+        <div className="random-gif">
+          <Gif gif={results.image_original_url} fullScreen={fullScreen} />
+        </div>
         <Button
           className="btn"
           variant="contained"

@@ -56,6 +56,12 @@ form {
   justify-content: center;
 }
 
+.random-gif img {
+  width: 90%;
+  height: 80vh;
+  border: 1px solid black;
+}
+
 .gif img {
   margin: 15px;
   border-radius: 15px;
@@ -75,5 +81,14 @@ form {
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    align-items: center;
+  }
+
+  .gifs-container img {
+    border: none;
+  }
+  .random-gif img {
+    width: 100%;
+    height: 100%;
   }
 }
