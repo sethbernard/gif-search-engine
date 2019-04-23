@@ -8,7 +8,7 @@ class Trending extends Component {
 
     this.state = {
       results: [],
-      limit: 20,
+      limit: 25,
       heading: 'TRENDING TODAY'
     };
   }
