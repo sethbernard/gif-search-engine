@@ -67,7 +67,8 @@ form {
     width: 300px;
   }
   .nav-bar {
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
   }
   .gifs-container {
     display: flex;

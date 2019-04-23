@@ -3,13 +3,14 @@ import '../App.css';
 import Header from './Header';
 import Form from './Form';
 import Gifs from './Gifs';
+import { apiSearch } from '../utils/apiSearch';
 
 class Home extends Component {
   constructor() {
     super();
 
     this.state = {
-      text: '',
+      text: 'puppies',
       results: [],
       heading: 'GIF SEARCH ENGINE',
       limit: 20
@@ -22,35 +23,35 @@ class Home extends Component {
     });
   };
 
-  handleSearch = e => url => {
-    e.preventDefault();
+  handleApi = () => {
+    const { text, limit } = this.state;
+    const { REACT_APP_API_KEY } = process.env;
+    const url = `http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${REACT_APP_API_KEY}&limit=${limit}`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(info => {
-        let gifs = info.data;
-        this.setState({
-          results: gifs,
-          heading: this.state.text.toUpperCase()
-        });
+    apiSearch(url).then(gifs =>
+      this.setState({
+        ...this.state,
+        results: gifs,
+        heading: this.state.text.toUpperCase()
       })
-      .catch(error => console.error(error));
+    );
   };
 
+  handleSearch = e => {
+    e.preventDefault();
+    this.handleApi();
+  };
+
+  componentDidMount() {
+    this.handleApi();
+  }
+
   render() {
-    const { heading, results, text, limit } = this.state;
-    const { REACT_APP_API_KEY } = process.env;
+    const { heading, results } = this.state;
     return (
       <div className="App">
         <Header heading={heading} />
-        <Form
-          onChange={this.handleChange}
-          onSubmit={e =>
-            this.handleSearch(e)(
-              `http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${REACT_APP_API_KEY}&limit=${limit}`
-            )
-          }
-        />
+        <Form onChange={this.handleChange} onSubmit={this.handleSearch} />
         <Gifs results={results} />
       </div>
     );

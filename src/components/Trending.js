@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Gifs from './Gifs';
+import { apiSearch } from '../utils/apiSearch';
 
 class Trending extends Component {
   constructor() {
@@ -18,19 +19,15 @@ class Trending extends Component {
   }
 
   handleTrending = () => {
-    const url = `http://api.giphy.com/v1/gifs/trending?api_key=${
-      process.env.REACT_APP_API_KEY
-    }`;
+    const { REACT_APP_API_KEY } = process.env;
+    const url = `http://api.giphy.com/v1/gifs/trending?api_key=${REACT_APP_API_KEY}`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(info => {
-        let gifs = info.data;
-        this.setState({
-          results: gifs
-        });
+    apiSearch(url).then(gifs =>
+      this.setState({
+        ...this.state,
+        results: gifs
       })
-      .catch(error => alert(error));
+    );
   };
 
   render() {

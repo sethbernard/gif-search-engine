@@ -16,8 +16,8 @@ class NavBar extends Component {
 
   render() {
     return (
-      <AppBar>
-        <List className="nav-bar">
+      <AppBar className="nav-bar">
+        <List>
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
