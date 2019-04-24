@@ -15,11 +15,12 @@ class NavBar extends Component {
   };
 
   render() {
+    const { value } = this.state;
     return (
       <AppBar className="nav-bar">
         <List>
           <Tabs
-            value={this.state.value}
+            value={value}
             onChange={this.handleChange}
             TabIndicatorProps={{ style: { backgroundColor: '#F5F5F5' } }}
           >

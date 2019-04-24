@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
   render() {
     const { onSubmit, onChange, value } = this.props;
     return (
-      <form onSubmit={e => onSubmit(e)(this.props.value)}>
+      <form onSubmit={e => onSubmit(e)}>
         <TextField
           className="input"
           label="Find GIFS"
@@ -40,5 +41,10 @@ class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 export default Form;

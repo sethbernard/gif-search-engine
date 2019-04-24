@@ -9,8 +9,7 @@ class Random extends Component {
 
     this.state = {
       results: '',
-      heading: 'RANDOM',
-      fullScreen: true
+      heading: 'RANDOM'
     };
   }
 
@@ -31,11 +30,11 @@ class Random extends Component {
   }
 
   render() {
-    const { results, fullScreen } = this.state;
+    const { results } = this.state;
     return (
-      <div style={{ marginTop: '100px', textAlign: 'center' }}>
+      <div className="random-container">
         <div className="random-gif">
-          <Gif gif={results.image_original_url} fullScreen={fullScreen} />
+          <Gif gif={results.image_original_url} />
         </div>
         <Button
           className="btn"

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Gif extends Component {
   render() {
-    const { gif, alt, fullScreen } = this.props;
+    const { gif, alt } = this.props;
     return (
       <div className="gif">
         <img src={gif} alt={alt} />
@@ -10,5 +11,10 @@ class Gif extends Component {
     );
   }
 }
+
+Gif.propTypes = {
+  gif: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired
+};
 
 export default Gif;
