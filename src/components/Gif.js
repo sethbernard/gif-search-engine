@@ -13,8 +13,8 @@ class Gif extends Component {
 }
 
 Gif.propTypes = {
-  gif: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired
+  gif: PropTypes.string,
+  alt: PropTypes.string
 };
 
 export default Gif;

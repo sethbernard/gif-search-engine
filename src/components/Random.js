@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Gif from './Gif';
 import Button from '@material-ui/core/Button';
+import Footer from './Footer';
 import { apiSearch } from '../utils/apiSearch';
 
 class Random extends Component {
@@ -32,18 +33,25 @@ class Random extends Component {
   render() {
     const { results } = this.state;
     return (
-      <div className="random-container">
-        <div className="random-gif">
-          <Gif gif={results.image_original_url} />
+      <div className="App">
+        <div className="random-container">
+          <div className="random-gif">
+            <Gif gif={results.image_original_url} />
+          </div>
+
+          <Button
+            className="btn"
+            variant="contained"
+            color="primary"
+            onClick={this.handleRandom}
+          >
+            Try Again :)
+          </Button>
+
+          <div className="random-footer">
+            <Footer />
+          </div>
         </div>
-        <Button
-          className="btn"
-          variant="contained"
-          color="primary"
-          onClick={this.handleRandom}
-        >
-          Try Again :)
-        </Button>
       </div>
     );
   }

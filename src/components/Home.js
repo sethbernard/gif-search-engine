@@ -3,6 +3,7 @@ import '../App.css';
 import Header from './Header';
 import Form from './Form';
 import Gifs from './Gifs';
+import Footer from './Footer';
 import { apiSearch } from '../utils/apiSearch';
 
 class Home extends Component {
@@ -53,6 +54,7 @@ class Home extends Component {
         <Header heading={heading} />
         <Form onChange={this.handleChange} onSubmit={this.handleSearch} />
         <Gifs results={results} />
+        <Footer />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Gifs from './Gifs';
+import Footer from './Footer';
 import { apiSearch } from '../utils/apiSearch';
 
 class Trending extends Component {
@@ -33,9 +34,10 @@ class Trending extends Component {
   render() {
     const { heading, results } = this.state;
     return (
-      <div style={{ marginTop: '100px', textAlign: 'center' }}>
+      <div className="App">
         <Header heading={heading} />
         <Gifs results={results} />
+        <Footer />
       </div>
     );
   }
