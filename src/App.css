@@ -56,6 +56,11 @@ form {
   justify-content: center;
 }
 
+.random-container {
+  margin-top: 100px;
+  text-align: center;
+}
+
 .random-gif img {
   width: 90%;
   height: 80vh;
