@@ -16,7 +16,7 @@ class Random extends Component {
 
   handleRandom = () => {
     const { REACT_APP_API_KEY } = process.env;
-    const url = `http://api.giphy.com/v1/gifs/random?api_key=${REACT_APP_API_KEY}`;
+    const url = `http://api.giphy.com/v1/gifs/random?api_key=${REACT_APP_API_KEY}&rating=pg`;
 
     apiSearch(url).then(gifs =>
       this.setState({
@@ -24,6 +24,7 @@ class Random extends Component {
         results: gifs
       })
     );
+    console.log(this.state.results);
   };
 
   componentDidMount() {
