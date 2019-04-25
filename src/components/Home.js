@@ -36,6 +36,7 @@ class Home extends Component {
         heading: this.state.text.toUpperCase()
       })
     );
+    console.log(this.state.results);
   };
 
   handleSearch = e => {

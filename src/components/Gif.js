@@ -6,7 +6,9 @@ class Gif extends Component {
     const { gif, alt } = this.props;
     return (
       <div className="gif">
-        <img src={gif} alt={alt} />
+        <a href={this.props.url} target="_blank" rel="noopener noreferrer">
+          <img src={gif} alt={alt} />
+        </a>
       </div>
     );
   }

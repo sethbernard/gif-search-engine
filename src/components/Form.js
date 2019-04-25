@@ -7,7 +7,7 @@ class Form extends Component {
   render() {
     const { onSubmit, onChange, value } = this.props;
     return (
-      <form onSubmit={e => onSubmit(e)}>
+      <form onSubmit={e => onSubmit(e)} style={{ backgroundColor: '#e0e0e0' }}>
         <TextField
           className="input"
           label="Find GIFs"

@@ -7,7 +7,12 @@ class Gifs extends Component {
       <div className="gifs-container">
         {this.props.results.map((gif, index) => {
           return (
-            <Gif key={index} gif={gif.images.original.url} alt={gif.title} />
+            <Gif
+              key={index}
+              gif={gif.images.original.url}
+              alt={gif.title}
+              url={gif.url}
+            />
           );
         })}
       </div>
