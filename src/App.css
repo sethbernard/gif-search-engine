@@ -105,6 +105,11 @@ form {
     align-items: center;
   }
 
+  .header h1 {
+    text-align: center;
+    font-size: 27px;
+  }
+
   .gifs-container {
     display: flex;
     flex-direction: column;
