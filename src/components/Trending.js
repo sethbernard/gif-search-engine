@@ -11,7 +11,7 @@ class Trending extends Component {
     this.state = {
       results: [],
       limit: 25,
-      heading: 'TRENDING TODAY'
+      heading: 'TRENDING 📈'
     };
   }
 

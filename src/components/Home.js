@@ -13,7 +13,7 @@ class Home extends Component {
     this.state = {
       text: 'puppies',
       results: [],
-      heading: 'GIF SEARCH ENGINE',
+      heading: '',
       limit: 20
     };
   }

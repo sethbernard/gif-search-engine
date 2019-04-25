@@ -10,7 +10,7 @@ class Form extends Component {
       <form onSubmit={e => onSubmit(e)}>
         <TextField
           className="input"
-          label="Find GIFS"
+          label="Find GIFs"
           placeholder="Ex: dog"
           onChange={e => onChange(e)}
           value={value}
