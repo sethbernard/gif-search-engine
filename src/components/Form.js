@@ -21,7 +21,7 @@ class Form extends Component {
         <TextField
           className="input"
           label="# of GIFs to display"
-          placeholder="Ex: 20"
+          placeholder="Between 1 and 200"
           value={value}
           onChange={e => onChange(e)}
           name="limit"

@@ -14,7 +14,8 @@ class Home extends Component {
       text: 'puppies',
       results: [],
       heading: '',
-      limit: 20
+      limit: 20,
+      open: false
     };
   }
 
@@ -40,7 +41,16 @@ class Home extends Component {
 
   handleSearch = e => {
     e.preventDefault();
-    this.handleApi();
+
+    const { limit } = this.state;
+
+    if (limit <= 200) {
+      this.handleApi();
+    } else if (limit > 200) {
+      alert('Please type a number lower than 200 😜');
+    } else {
+      alert('Please type a number 🙃');
+    }
   };
 
   componentDidMount() {
