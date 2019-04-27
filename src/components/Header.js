@@ -5,9 +5,7 @@ const Header = props => {
   return (
     <div className="header">
       <h1>
-        {props.heading === 'PUPPIES'
-          ? '🐶 GIF SEARCH ENGINE 🐕 '
-          : props.heading}
+        {props.heading === 'PUPPIES' ? '🐶 GIPHY SEARCH 🐕 ' : props.heading}
       </h1>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../giphy-attribution.png';
+import logo from '../assets/giphy-attribution.png';
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
       >
         Developed by <strong>Seth Bernard</strong>
       </a>
-      <img src={Logo} alt="Powered by GIPHY" />
+      <img src={logo} alt="Powered by GIPHY" />
     </div>
   );
 };
