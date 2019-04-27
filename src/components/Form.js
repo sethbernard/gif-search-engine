@@ -35,7 +35,7 @@ class Form extends Component {
           onClick={e => onSubmit(e)}
           type="submit"
         >
-          Click me
+          SEARCH
         </Button>
       </form>
     );
