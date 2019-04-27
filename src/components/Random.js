@@ -24,7 +24,6 @@ class Random extends Component {
         results: gifs
       })
     );
-    console.log(this.state.results);
   };
 
   componentDidMount() {
