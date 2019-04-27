@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 class Gif extends Component {
   render() {
-    const { gif, alt } = this.props;
+    const { gif, alt, url } = this.props;
     return (
       <div className="gif">
-        <a href={this.props.url} target="_blank" rel="noopener noreferrer">
+        <a href={url} target="_blank" rel="noopener noreferrer">
           <img src={gif} alt={alt} />
         </a>
       </div>
