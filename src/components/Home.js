@@ -28,7 +28,7 @@ class Home extends Component {
   handleApi = () => {
     const { text, limit } = this.state;
     const { REACT_APP_API_KEY } = process.env;
-    const url = `http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${REACT_APP_API_KEY}&limit=${limit}`;
+    const url = `https://api.giphy.com/v1/gifs/search?q=${text}&api_key=${REACT_APP_API_KEY}&limit=${limit}`;
 
     apiSearch(url).then(gifs =>
       this.setState({
