@@ -19,16 +19,15 @@ class Trending extends Component {
     this.handleTrending();
   }
 
-  handleTrending = () => {
-    const { REACT_APP_API_KEY } = process.env;
-    const url = `http://api.giphy.com/v1/gifs/trending?api_key=${REACT_APP_API_KEY}`;
+  handleTrending = async () => {
+    const { limit } = this.state;
 
-    apiSearch(url).then(gifs =>
-      this.setState({
-        ...this.state,
-        results: gifs
-      })
-    );
+    const trendingGifs = await apiSearch('v1/gifs/trending', { limit: limit });
+
+    this.setState({
+      ...this.state,
+      results: trendingGifs
+    });
   };
 
   render() {

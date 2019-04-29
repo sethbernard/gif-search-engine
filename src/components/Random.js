@@ -10,20 +10,19 @@ class Random extends Component {
 
     this.state = {
       results: '',
-      heading: 'RANDOM'
+      rating: 'pg'
     };
   }
 
-  handleRandom = () => {
-    const { REACT_APP_API_KEY } = process.env;
-    const url = `http://api.giphy.com/v1/gifs/random?api_key=${REACT_APP_API_KEY}&rating=pg`;
+  handleRandom = async () => {
+    const { rating } = this.state;
 
-    apiSearch(url).then(gifs =>
-      this.setState({
-        ...this.state,
-        results: gifs
-      })
-    );
+    const gifs = await apiSearch('v1/gifs/random', { rating: rating });
+
+    this.setState({
+      ...this.state,
+      results: gifs
+    });
   };
 
   componentDidMount() {

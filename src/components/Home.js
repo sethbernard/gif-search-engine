@@ -14,8 +14,7 @@ class Home extends Component {
       text: 'puppies',
       results: [],
       heading: '',
-      limit: 20,
-      open: false
+      limit: 10
     };
   }
 
@@ -25,18 +24,16 @@ class Home extends Component {
     });
   };
 
-  handleApi = () => {
+  handleApi = async () => {
     const { text, limit } = this.state;
-    const { REACT_APP_API_KEY } = process.env;
-    const url = `https://api.giphy.com/v1/gifs/search?q=${text}&api_key=${REACT_APP_API_KEY}&limit=${limit}`;
 
-    apiSearch(url).then(gifs =>
-      this.setState({
-        ...this.state,
-        results: gifs,
-        heading: this.state.text.toUpperCase()
-      })
-    );
+    const gifs = await apiSearch('v1/gifs/search', { q: text, limit: limit });
+
+    this.setState({
+      ...this.state,
+      results: gifs,
+      heading: this.state.text.toUpperCase()
+    });
   };
 
   handleSearch = e => {
