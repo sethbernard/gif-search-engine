@@ -61,10 +61,10 @@ form {
 }
 
 .random-gif img {
+  align-items: center;
+  border: 1px solid black;
   width: 90%;
   height: 80vh;
-  border: 1px solid black;
-  align-items: center;
 }
 
 .random-container button {
@@ -140,13 +140,17 @@ form {
     border: none;
   }
 
+  .random-container {
+    margin-top: 70px;
+  }
+
   .random-gif img {
     width: 95vw;
     height: auto;
   }
 
   .random-container button {
-    margin-top: 75px;
+    margin-top: 20px;
   }
 
   #random-footer {
