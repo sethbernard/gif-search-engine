@@ -44,7 +44,10 @@ class Random extends Component {
             color="primary"
             onClick={this.handleRandom}
           >
-            Try Again :)
+            Try Again
+            <span role="img" aria-label="slot-machine" className="emoji">
+              🎰
+            </span>
           </Button>
 
           <div id="random-footer">
