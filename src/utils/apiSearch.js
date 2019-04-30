@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.giphy.com/';
+const BASE_URL = 'https://api.giphy.com/v1/';
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const buildUrl = (endpoint, params) => {
