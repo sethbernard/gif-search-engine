@@ -17,11 +17,11 @@ class Random extends Component {
   handleRandom = async () => {
     const { rating } = this.state;
 
-    const gifs = await apiSearch('v1/gifs/random', { rating: rating });
+    const randomGif = await apiSearch('gifs/random', { rating: rating });
 
     this.setState({
       ...this.state,
-      results: gifs
+      results: randomGif
     });
   };
 
@@ -47,7 +47,7 @@ class Random extends Component {
             Try Again :)
           </Button>
 
-          <div className="random-footer">
+          <div id="random-footer">
             <Footer />
           </div>
         </div>

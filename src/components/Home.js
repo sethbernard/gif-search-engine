@@ -27,7 +27,7 @@ class Home extends Component {
   handleApi = async () => {
     const { text, limit } = this.state;
 
-    const gifs = await apiSearch('v1/gifs/search', { q: text, limit: limit });
+    const gifs = await apiSearch('gifs/search', { q: text, limit: limit });
 
     this.setState({
       ...this.state,

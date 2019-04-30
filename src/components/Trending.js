@@ -22,7 +22,7 @@ class Trending extends Component {
   handleTrending = async () => {
     const { limit } = this.state;
 
-    const trendingGifs = await apiSearch('v1/gifs/trending', { limit: limit });
+    const trendingGifs = await apiSearch('gifs/trending', { limit: limit });
 
     this.setState({
       ...this.state,
