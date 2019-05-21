@@ -5,13 +5,15 @@
 }
 
 body {
-  margin-left: 10%;
-  margin-right: 10%;
+  min-height: 100vh;
   background-color: #03dac5;
   font-family: 'Ubuntu', sans-serif;
+  overflow-x: hidden;
 }
 
 .App {
+  margin-left: 10%;
+  margin-right: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +65,7 @@ form {
 .random-gif img {
   align-items: center;
   border: 1px solid black;
-  width: 90%;
+  width: auto;
   height: 80vh;
 }
 
@@ -81,31 +83,45 @@ form {
   border: 3px solid black;
 }
 
-.footer {
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80px;
   width: 100vw !important;
   background-color: #3f51b5;
   margin-top: 100px;
 }
 
-.footer a {
+footer a {
   text-decoration: none;
   color: #f5f5f5;
   padding: 10px 0;
   font-size: 1rem;
 }
 
-.footer img {
+footer img {
   padding-bottom: 10px;
 }
 
 @media (max-width: 980px) {
   .input {
     width: 400px;
+  }
+
+  .random-container {
+    flex-grow: 1;
+  }
+
+  .random-gif img {
+    border: none;
+  }
+  #random-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
   }
 }
 
@@ -152,9 +168,19 @@ form {
   .random-container button {
     margin-top: 20px;
   }
+}
 
-  #random-footer {
-    position: absolute;
-    bottom: 0;
+@media (max-width: 550px) {
+  body {
+    min-height: 100vh;
+  }
+
+  .gif img {
+    width: 100vw;
+    height: auto;
+  }
+  .random-gif img {
+    width: 100vw;
+    height: auto;
   }
 }

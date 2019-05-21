@@ -3,7 +3,7 @@ import logo from '../assets/giphy-attribution.png';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer>
       <a
         href="https://github.com/sethbernard"
         target="_blank"
@@ -12,7 +12,7 @@ const Footer = () => {
         Developed by <strong>Seth Bernard</strong>
       </a>
       <img src={logo} alt="Powered by GIPHY" />
-    </div>
+    </footer>
   );
 };
 
