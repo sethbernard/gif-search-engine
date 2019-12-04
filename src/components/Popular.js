@@ -4,14 +4,14 @@ import Gifs from './Gifs';
 import Footer from './Footer';
 import { apiSearch } from '../utils/apiSearch';
 
-class Trending extends Component {
+class Popular extends Component {
   constructor() {
     super();
 
     this.state = {
       results: [],
       limit: 25,
-      heading: 'TRENDING 📈'
+      heading: 'POPULAR 📈'
     };
   }
 
@@ -42,4 +42,4 @@ class Trending extends Component {
   }
 }
 
-export default Trending;
+export default Popular;

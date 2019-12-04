@@ -25,7 +25,7 @@ class NavBar extends Component {
             TabIndicatorProps={{ style: { backgroundColor: '#F5F5F5' } }}
           >
             <Tab label="Home" component={Link} to="/" value={0} />
-            <Tab label="Trending" component={Link} to="/trending" value={1} />
+            <Tab label="Popular" component={Link} to="/popular" value={1} />
             <Tab label="Random" component={Link} to="/random" value={2} />
           </Tabs>
         </List>
